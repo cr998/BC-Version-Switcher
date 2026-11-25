@@ -3,7 +3,7 @@
   "displayName": "BC Version Switcher",
   "description": "Selecciona la versión de Business Central (app.json desde .versions/<VERSION>.app.json) y su caché de símbolos.",
   "version": "0.1.0",
-  "publisher": "aitana",
+  "publisher": "CristianMartinezMontes",
   "license": "UNLICENSED",
   "engines": { "vscode": "^1.75.0" },
   "categories": ["Other"],
