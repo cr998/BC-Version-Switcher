@@ -1,0 +1,33 @@
+{
+  "name": "bc-version-switcher",
+  "displayName": "BC Version Switcher",
+  "description": "Selecciona la versión de Business Central (app.json desde .versions/<VERSION>.app.json) y su caché de símbolos.",
+  "version": "0.1.0",
+  "publisher": "aitana",
+  "license": "UNLICENSED",
+  "engines": { "vscode": "^1.75.0" },
+  "categories": ["Other"],
+  "activationEvents": ["workspaceContains:.versions/*.app.json"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "bcVersionSwitcher.select", "title": "Seleccionar versión de BC", "category": "BC" },
+      { "command": "bcVersionSwitcher.reapply", "title": "Regenerar app.json de la versión actual", "category": "BC" }
+    ],
+    "configuration": {
+      "title": "BC Version Switcher",
+      "properties": {
+        "bcVersionSwitcher.packageCachePerVersion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Usar una caché de símbolos por versión (.alpackages/<VERSION>) escribiendo al.packageCachePath."
+        },
+        "bcVersionSwitcher.downloadSymbolsIfEmpty": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ofrecer 'AL: Download symbols' si la caché de la versión elegida está vacía."
+        }
+      }
+    }
+  }
+}
